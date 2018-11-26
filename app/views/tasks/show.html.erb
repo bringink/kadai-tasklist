@@ -1,7 +1,19 @@
 <h1>id: <%= @task.id %> Task Details</h1>
-<p><%= @task.content %></p>
-<div> Task Status: <%= @task.status %></div>
 
-<%= link_to 'Back to Task List', tasks_path %>
-<%= link_to 'Edit Task', edit_task_path(@task) %>
-<%= link_to 'Remove Task', @task, method: :delete, data: { confirm: 'Are you sure to remove task?' } %>
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @task.id %></td>
+  </tr>
+  <tr>
+    <th>Task Details</th>
+    <td><%= @task.content %></td>
+  </tr>
+  <tr>
+    <th>Task Status</th>
+    <td><%= @task.status %></td>
+  </tr>
+</table>
+
+<%= link_to 'Edit Task', edit_task_path(@task), class: 'btn btn-default' %>
+<%= link_to 'Remove Task', @task, method: :delete, data: { confirm: 'Are you sure to remove task?' }, class: 'btn btn-danger' %>
