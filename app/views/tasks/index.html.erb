@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>id</th>
+        <th>User</th>
         <th>Task Details</th>
         <th>Task Status</th>
       </tr>
@@ -13,8 +14,9 @@
       <% @tasks.each do |task| %>
         <tr>
           <th><%= link_to task.id, task %></th>
-          <th><%= task.content %></td>
-          <th><%= task.status %></td>
+          <td><%= task.user.name %></td>
+          <td><%= task.content %></td>
+          <td><%= task.status %></td>
         </tr>
       <% end %>
     </tbody>
